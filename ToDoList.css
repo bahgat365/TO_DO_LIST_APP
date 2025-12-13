@@ -1,0 +1,138 @@
+*{
+    font-family:"Cairo",sans-serif;
+    margin: 0;
+    padding: 0;
+      box-sizing: border-box;
+}
+.small-alert {
+  width: 400px !important;   /* العرض */
+  padding: 15px !important;  /* المسافات الداخلية */
+  font-size: 14px !important; /* حجم الخط */
+
+}
+:root{
+   --WhiteColor:rgb(255, 255, 255);
+   --grayColor:#f0f0f0;
+   --greenColor:rgb(68, 192, 68);
+   --backgroundColor:rgb(65, 65, 65);
+}
+.contener{
+background-color:var(--backgroundColor) ;
+min-height: 100vh;
+padding:2px;
+}
+.contener .ToDolist{
+    max-width: 540px;
+  
+   max-height: 600px;
+    background-color: var(--WhiteColor);
+    padding:25px 25px 70px;
+    border-radius: 15px;
+    margin: 50px  auto;
+    overflow-y: auto;
+}
+.ToDolist header{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 20px;
+      h2{
+        font-weight: bolder;
+        font-size: 30px;
+    }
+}
+.ToDolist header img{
+    width: 30px;
+}
+.ToDolist .input_field{
+    margin-bottom: 25px;
+}
+.ToDolist .input_field .input{
+    width: 80%;
+    border: none;
+    outline: none;
+    caret-color: var(--greenColor);
+    background-color: var(--grayColor);
+    font-size: 15px;
+    padding: 15px;
+    border-radius: 5px;
+}
+.ToDolist .input_field .input:focus::placeholder{
+    opacity: 0;
+}
+.ToDolist .input_field button{
+    color: var(--WhiteColor);
+background: linear-gradient(to right, #00c853, #64dd17);
+    border: none;
+    padding: 12px 30px ;
+    border-radius: 5px;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: background 0.6s ease-in-out;
+  
+}
+.ToDolist .input_field button:hover{
+background: linear-gradient(to right, #27da2d, #64dd17);
+}
+.ToDolist .tasks{
+
+    
+    
+}
+ .ToDolist ul.tasks  li.task{
+width: 100%;
+text-decoration: none;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 15px 0px; 
+position: relative; 
+}
+
+.ToDolist ul.tasks  li.task p {
+    margin-left: 35px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ToDolist ul.tasks  li.task i {
+    margin-right: 15px;
+    transition: .2s;
+    cursor:pointer;
+}
+.ToDolist ul.tasks  li.task i:hover{
+    color:red;
+}
+.ToDolist ul.tasks  li.task p::before{
+    content: "";
+        width: 15px;
+        height: 15px;
+    border: 2px solid #030303; /* لون الحدود */
+    border-radius: 50%;          /* تخليها دائرة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* خلفية شفافة */
+    cursor: pointer;
+    font-size: 20px;              /* حجم الأيقونة */ 
+    position:absolute;
+    left: 0;
+    bottom: 15px;
+
+}
+    
+.ToDolist ul.tasks li.checked p::before {
+    content: "";
+    width: 22px;
+    height: 22px;
+    background-image: url('./imges/new\ true.png');
+    background-size: cover;       /* لتغطية البوكس بالكامل */
+    background-position: center;  /* تمركز الصورة */
+    position: absolute;
+   right: px;
+    bottom: 10px;
+    border:none;
+}
+.ToDolist ul.tasks li.checked p{
+    text-decoration: line-through;
+}
